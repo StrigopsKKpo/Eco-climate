@@ -1,0 +1,27 @@
+# Core scientific stack
+numpy
+pandas
+xarray
+scipy
+
+# Visualization and mapping
+matplotlib
+plotly
+seaborn
+folium
+geemap
+geopandas
+
+# Jupyter environment
+notebook
+jupyterlab
+ipykernel
+
+# Web dashboards / apps
+streamlit
+altair
+
+# Machine learning / analysis (for biodiversity or trends)
+scikit-learn
+statsmodels
+
