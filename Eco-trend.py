@@ -52,7 +52,7 @@ m.addLayer(mean_ndvi, mean_vis, 'Mean NDVI (2000–2023)')
 m.addLayer(slope, trend_vis, 'NDVI Trend (Slope)')
 
 # Export HTML map
-output_file = "maps/eco_trends_map.html"
+output_file = "eco_trend_map.html"
 m.to_html(output_file, notebook_display=False)
 print(f"Map saved to {output_file}")
 
