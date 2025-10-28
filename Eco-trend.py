@@ -1,47 +1,61 @@
-
-# # Eco-Trends Map
-# 
-# This notebook displays MODIS NDVI and ESA WorldCover datasets using Google Earth Engine and geemap.
-
-# %%
 import ee
 import geemap.foliumap as geemap
+import os, webbrowser
 
-# Authenticate and initialize Earth Engine
+# Initialize Earth Engine
 try:
     ee.Initialize(project="ee-ferrenoe")
 except ee.EEException:
     ee.Authenticate()
     ee.Initialize(project="ee-ferrenoe")
 
-# %%
-# Create a map centered on your area of interest
-m = geemap.Map(center=[20, 0], zoom=2)
+# Define time range
+start_date = '2000-01-01'
+end_date = '2023-12-31'
 
-# %%
-# ===============================
-# ADD ECO-TRENDS DATASETS HERE
-# ===============================
+# Load MODIS NDVI collection
+ndvi_collection = ee.ImageCollection('MODIS/061/MOD13A2') \
+    .select('NDVI') \
+    .filterDate(start_date, end_date)
 
-# MODIS NDVI (Vegetation Index)
-ndvi_collection = ee.ImageCollection('MODIS/061/MOD13A2').select('NDVI').mean()
-m.addLayer(
-    ndvi_collection,
-    {'min': 0, 'max': 9000, 'palette': ['white', 'green']},
-    'MODIS NDVI'
-)
+# Add a time band for trend analysis
+def add_time_band(image):
+    year = ee.Date(image.get('system:time_start')).difference(ee.Date(start_date), 'year')
+    return image.addBands(ee.Image.constant(year).rename('t')).float()
 
-# Global Land Cover (ESA)
-landcover = ee.Image('ESA/WorldCover/v100/2020')
-m.addLayer(
-    landcover,
-    {'min': 10, 'max': 100, 'palette': ['forestgreen', 'yellow', 'brown', 'blue']},
-    'ESA WorldCover 2020'
-)
+ndvi_with_time = ndvi_collection.map(add_time_band)
 
-# Display the map in the notebook
-m
+# Linear regression: NDVI ~ time
+trend = ndvi_with_time.select(['t', 'NDVI']).reduce(ee.Reducer.linearFit())
 
-# Export the interactive map to an HTML file
-m.to_html("eco_trend_map.html", notebook_display=False)
-print("Map saved as eco_trend_map.html")
+# Extract slope (trend) and intercept
+slope = trend.select('scale')  # slope represents trend per year
+intercept = trend.select('offset')
+
+# Define visualization parameters
+trend_vis = {
+    'min': -50,
+    'max': 50,
+    'palette': ['brown', 'white', 'green']
+}
+
+mean_ndvi = ndvi_collection.mean()
+mean_vis = {
+    'min': 0,
+    'max': 8000,
+    'palette': ['white', 'lightgreen', 'darkgreen']
+}
+
+# Create map
+m = geemap.Map(center=[0, 0], zoom=2)
+m.addLayer(mean_ndvi, mean_vis, 'Mean NDVI (2000–2023)')
+m.addLayer(slope, trend_vis, 'NDVI Trend (Slope)')
+
+# Export HTML map
+output_file = "maps/eco_trends_map.html"
+m.to_html(output_file, notebook_display=False)
+print(f"Map saved to {output_file}")
+
+# Open automatically
+full_path = os.path.abspath(output_file)
+webbrowser.open(f"file://{full_path}")

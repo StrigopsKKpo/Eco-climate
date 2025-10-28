@@ -19,6 +19,8 @@ Each module explores a key environmental theme:
 
 ---
 
+[![Eco-Trends Map](https://img.shields.io/badge/View-Eco%20Trends%20Map-green)](https://yourusername.github.io/eco-climate/eco_trend_map.html)
+
 ## 🧭 Objectives
 
 * Combine **Google Earth Engine**, **Python**, and **open data sources** (NASA, Copernicus, NOAA).
