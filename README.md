@@ -19,7 +19,7 @@ Each module explores a key environmental theme:
 
 ---
 
-[![Eco-Trends Map](https://img.shields.io/badge/View-Eco%20Trends%20Map-green)](https://StrigopsKKpo.github.io/eco-climate/eco_trend_map.html)
+[![Eco-Trends Map](https://img.shields.io/badge/View-Eco%20Trends%20Map-green)](https://StrigopsKKpo.github.io/Eco-climate/eco_trend_map.html)
 
 ## 🧭 Objectives
 
