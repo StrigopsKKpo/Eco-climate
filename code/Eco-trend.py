@@ -80,7 +80,7 @@ m.addLayer(
 # ------------------------------------------------------------------
 # Save & open map
 # ------------------------------------------------------------------
-map_file = "eco_trend_map.html"
+map_file = "maps/eco_trend_map.html"
 m.to_html(map_file, notebook_display=False)
 print(f"Map saved as {map_file}")
 

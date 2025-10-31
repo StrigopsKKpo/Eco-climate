@@ -47,7 +47,7 @@ m.addLayer(landcover, lc_vis, 'ESA WorldCover 2020')
 # -----------------------------
 # Export map to HTML
 # -----------------------------
-map_file = "biodiversity_pulse_map.html"
+map_file = "maps/biodiversity_pulse_map.html"
 m.to_html(map_file, notebook_display=False)
 print(f"Map saved as {map_file}")
 
