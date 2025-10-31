@@ -63,7 +63,7 @@ m.addLayer(
 )
 
 # Export to HTML and open in browser
-output_html = "maps/drought_water_map.html"
+output_html = "drought_water_map.html"
 m.to_html(output_html, notebook_display=False)
 print(f"✅ Map saved as {output_html}")
 

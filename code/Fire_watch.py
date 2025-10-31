@@ -53,7 +53,7 @@ m.addLayer(ndvi_mean, ndvi_vis, 'Mean NDVI (2015–2023)')
 # ---------------------------------------------------
 # Export to HTML
 # --------------------------------------------------
-map_file = "maps/fire_watch_map.html"
+map_file = "fire_watch_map.html"
 m.to_html(map_file, notebook_display=False)
 print(f"Map saved as {map_file}")
 

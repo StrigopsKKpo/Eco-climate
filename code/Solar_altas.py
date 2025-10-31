@@ -51,7 +51,7 @@ m.addLayer(solar_per_capita, pop_vis, 'Solar Radiation per Capita')
 # -------------------------
 # Export to HTML
 # -------------------------
-map_file = "maps/solar_atlas_map.html"
+map_file = "solar_atlas_map.html"
 m.to_html(map_file, notebook_display=False)
 print(f"Map saved as {map_file}")
 
