@@ -19,7 +19,7 @@ Each module explores a key environmental theme:
 
 ---
 
-[![Eco-Trend Map](https://img.shields.io/badge/View-Eco%20Trend%20Map-green)](https://StrigopsKKpo.github.io/Eco-climate/eco_trend_map.html)
+[![Eco-Trend Map](https://img.shields.io/badge/View-Eco%20Trend%20Map-green)](https://StrigopsKKpo.github.io/Eco-climate/drought_water_map.html)
 
 [![Drought-Water Map](https://img.shields.io/badge/View-Drought%20Water%20Map-blue)](https://StrigopsKKpo.github.io/Eco-climate/drought_water_map.html)
 
@@ -31,7 +31,7 @@ Each module explores a key environmental theme:
 
 ## 🧭 Objectives
 
-* Combine **Google Earth Engine**, **Python**, and **open data sources** (NASA, Copernicus, NOAA).
+* Combine **Google Earth Engine**, **Python**, and **open data sources** (OpenMeteo, NASA, Copernicus, NOAA).
 * Provide reproducible code and clear visualizations.
 * Encourage data-driven ecological awareness.
 
@@ -43,7 +43,6 @@ Each module explores a key environmental theme:
 * **Google Earth Engine API**
 * **geemap**, **xarray**, **pandas**, **matplotlib**, **plotly**, **folium**
 * **Jupyter Notebooks** for research
-* **Streamlit** for interactive dashboards
 
 ---
 
@@ -59,9 +58,6 @@ Eco-Climate/
 │   ├── solar-atlas/          # Renewable energy mapping
 │   └── biodiversity-pulse/   # Habitat & species analysis
 │
-├── data/                     # Local datasets (if any)
-├── notebooks/                # Exploratory Jupyter notebooks
-├── scripts/                  # Reusable Python utilities
 ├── README.md                 # You are here
 └── requirements.txt
 ```
@@ -87,23 +83,6 @@ To use **Google Earth Engine**, make sure you are logged in:
 
 ```bash
 earthengine authenticate
-```
-
----
-
-## 🧪 How to Run a Project
-
-Example for `eco-trends`:
-
-```bash
-cd projects/eco-trends
-jupyter notebook eco-trends.ipynb
-```
-
-Or run the Streamlit app (if available):
-
-```bash
-streamlit run app.py
 ```
 
 ---
