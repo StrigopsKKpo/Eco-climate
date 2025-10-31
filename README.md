@@ -19,9 +19,9 @@ Each module explores a key environmental theme:
 
 ---
 
-[![Eco-Trend Map](https://img.shields.io/badge/View-Eco%20Trend%20Map-green)](https://StrigopsKKpo.github.io/Eco-climate/drought_water_map.html)
+[![Eco-Trend Map](https://img.shields.io/badge/View-Eco%20Trend%20Map-green)](https://StrigopsKKpo.github.io/Eco-climate/eco_trend_map.html)
 
-[![Drought-Water Map](https://img.shields.io/badge/View-Drought%20Water%20Map-blue)](https://StrigopsKKpo.github.io/Eco-climate/drought_water_map.html)
+[![Drought-Water Map](https://img.shields.io/badge/View-Drought%20Water%20Map-blue)](https://StrigopsKKpo.github.io/Eco-climate/eco_trend_map.html)
 
 [![Fire-Watch Map](https://img.shields.io/badge/View-Fire%20Watch%20Map-red)](https://StrigopsKKpo.github.io/Eco-climate/fire_watch_map.html)
 
