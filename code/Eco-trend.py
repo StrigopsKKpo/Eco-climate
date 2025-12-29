@@ -6,7 +6,7 @@ import webbrowser
 # Authenticate and initialize Earth Engine
 try:
     ee.Initialize(project="ee-ferrenoe")
-except ee.EEException:
+except ee.EEException: 
     ee.Authenticate()
     ee.Initialize(project="ee-ferrenoe")
 
